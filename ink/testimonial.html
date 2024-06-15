@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Testimonial Section </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="shortcut icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+ 
+ 
+  
+    
+  
+
+<style>
+
+  
+.testimonial-section{
+    background-color: #ffffff;
+    padding: 80px 0;
+    min-height: 100vh;
+}
+.testi-img .img-box{
+    max-width: 360px;
+    margin:auto;
+    text-align: center;
+    position: relative;
+}
+.testi-img .circle{
+    height: 360px;
+    width: 360px;
+    background-color: #fb9c9a;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    bottom: 0;
+    transition:all 0.5s ease;
+    
+}
+.testi-img .img-box-inner{
+    position: relative;
+    border-radius: 0 0 180px 180px;
+    overflow:hidden;
+}
+.testi-img .img-box-inner img{
+    max-width: 310px;
+}
+.testimonial-section .carousel-inner{
+    margin-bottom: 20px;
+}
+.testimonial-section .carousel-control-prev{
+    margin-right: 10px;
+}
+.testimonial-section .carousel-control-next, 
+.testimonial-section .carousel-control-prev{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: #fb9c9a;   
+    display: inline-flex;
+    border-radius: 50%;
+}
+.testimonial-section .carousel-control-prev img,
+.testimonial-section .carousel-control-next img{
+    width: 15px;
+}
+.testi-item h3,
+.testi-item p{
+    font-size: 18px;
+}
+.testi-item h3{
+    text-transform: capitalize;
+}
+
+/* Responsive */
+@media(max-width:991px){
+    .testi-img .img-box{
+        max-width: 300px;
+    }
+    .testi-img .circle{
+        height: 300px;
+        width: 300px;
+    }
+    .testi-img .img-box-inner{
+        border-radius: 0 0 150px 150px;
+    }
+    .testi-img .img-box-inner img{
+        max-width: 230px;
+    }
+}
+@media(max-width:767px){
+    .testi-img{
+        margin-bottom: 25px;
+    }
+}
+
+/*Navbar*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+    .navbar-brand img{
+        width:50px;
+        margin-top: 0;
+        border-radius:50%;
+    }
+    .collapse{
+    justify-content:flex-end;
+}
+.nav-item{
+    border:1.5px solid transparent;
+}
+.nav-item a:hover{
+    
+    border:1.5px solid white;
+}
+.navbar-toggler{
+    background-color: #fff;
+}
+
+  .navbar-text {
+    text-align: center;
+    flex: 1;
+    font-family: 'cursive', sans-serif; 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center; 
+}
+
+.has-children {
+  position: relative; }
+.has-children > a span {
+  position: relative;
+  padding-right: 30px;
+  padding-left: 5px;
+  margin-bottom:0px;
+color: #fff; }
+.has-children > a span:before {
+  position: absolute;
+  content: "\2304";
+  font-size: 16px;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+ }
+.has-children .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  top: 100%;
+  position: absolute;
+  text-align: left;
+  border-top: 2px solid #007bff;
+  -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  padding: 0px 0;
+  margin-top: 20px;
+  margin-left: 0px;
+  background: #fff;
+  -webkit-transition: 0.2s 0s;
+  -o-transition: 0.2s 0s;
+  transition: 0.2s 0s; }
+.has-children .dropdown a {
+  text-transform: none;
+  letter-spacing: normal;
+  -webkit-transition: 0s all;
+  -o-transition: 0s all;
+  transition: 0s all;
+  color: #000; }
+.has-children .dropdown .active > a {
+  color: #007bff !important; }
+.has-children .dropdown > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; }
+.has-children .dropdown > li > a {
+  padding: 9px 20px;
+  display: block;
+  text-decoration:none; }
+.has-children .dropdown > li > a:hover {
+  background: #ededf5; }
+.has-children .dropdown > li.has-children > a {
+  position: relative; }
+.has-children .dropdown > li.has-children > a:after {
+  position: absolute;
+  right: 0;
+  content: "\e315";
+  right: 20px;
+  font-family: 'icomoon'; }
+.has-children .dropdown > li.has-children > .dropdown,.has-children .dropdown > li.has-children > ul {
+  left: 100%;
+  top: 0; }
+.has-children .dropdown > li.has-children:hover > a, .has-children .dropdown > li.has-children:active > a,.has-children .dropdown > li.has-children:focus > a {
+  background: #0d546a; }
+.has-children:hover > a,.has-children:focus > a,.has-children:active > a {
+  color: #007bff; }
+
+.has-children:hover, .has-children:focus, .has-children:active {
+  cursor: pointer; }
+.has-children:hover > .dropdown,.has-children:focus > .dropdown,.has-children:active > .dropdown {
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  margin-top: 0px;
+  visibility: visible;
+  opacity: 1; }
+
+
+/*Footer*/
+footer{
+    margin-top:15px;
+}
+footer a {
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+
+.foot-panel2{
+    padding-top:1%;
+    background-color:#123c69;
+    color:white;
+    height:5%;
+    display:flex;
+    justify-content:space-evenly;
+    font-size:20px;
+    font-family:'Karla',sans-serif;
+    padding-bottom:1%;
+}
+ul{
+    margin-top:20px;
+    text-decoration:none;
+    list-style:none;
+}
+ul a{
+    display:block;
+    font-size:0.85rem;
+    margin-top:10px;
+    color:#dddddd;
+}
+ul a:hover{
+    color:#edc7b7;
+}
+.logo{
+    background-image:url("logo.jpeg");
+    height:100px;
+    background-size:cover;
+    width:100px;
+    border-radius:50%;
+}
+.foot-panel3{
+    background-color:#0f1111;
+    color:white;
+    height:80px;
+    font-size:0.7rem;
+    text-align:center;
+}
+.pages{
+padding-top:25px;
+}
+.copyright{
+    padding-top:5px;
+}
+
+.social-network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.social-network i {
+    font-size: 24px; 
+    margin-right: 10px; 
+}
+/*SOCİAL İCONS*/
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoInstagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);   
+}
+
+.social-network a.icoTwitter:hover {
+  background-color: #00acee;
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoInstagram:hover i, .social-network a.icoTwitter:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #000;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}
+
+
+  /*Back to top*/
+  .back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
+
+/*** Button ***/
+.btn {
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+  padding: 13px 20px 12px;
+  background-color: #123c69;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.btn:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    background-color: #123c69;
+    color:#fff;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+
+</style>
+</head>
+<body id="#">
+
+  <nav class="navbar navbar-expand-md w-100" style="background-color:#123c69">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/logo.png"></a> 
+      <p class="navbar-text" style="color:white;font-family:Karla;font-size:20px;">Ink and Echoes</p>
+      <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <li class="has-children">
+              <a class="nav-link active"><span>Category</span></a>
+              <ul class="dropdown">
+                <li><a href="music.html">Music</a></li>
+                <li><a href="books.html">Books</a></li>
+              </ul>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="testimonial.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<section class="testimonial-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 testi-img">
+        <div class="img-box">
+          <div class="circle"></div>
+          <div class="img-box-inner">
+            <img src="images/testimonial/1.png" alt="testi img">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div id="myCarousel" class="carousel slide" data-bs-interval="5000" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item testi-item active" data-color="#fb9c9a" data-img="images/1.png">
+              <p>"I love this platform! It's my go-to for discovering new books and music. The reviews and recommendations are always spot on, helping me find hidden gems I might have missed otherwise. A true treasure for any book or music enthusiast."</p>
+              <h3>Peterson - <span>Artist</span></h3>
+            </div>
+            <div class="carousel-item testi-item" data-color="#fbd39a" data-img="images/2.png">
+              <p>"This website is a haven for bookworms and audiophiles like me. The quality and depth of reviews are impressive. Whether I'm looking for a captivating novel or a fresh album to listen to, I can trust the recommendations on this platform."</p>
+              <h3>Ishani - <span>Musician</span></h3>
+            </div>
+            <div class="carousel-item testi-item" data-color="#9ab0fb" data-img="images/3.png">
+              <p>"I can't thank this website enough for broadening my literary and musical horizons. The reviews are detailed, and the community discussions are engaging. I've found some amazing reads and songs that have enriched my life."
+
+              </p>
+              <h3> Michel - <span>Author</span></h3>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <img src="images/left-arrow.png" alt="prev">
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <img src="images/right-arrow.png"alt="prev">
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="btn btn-lg btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            
+  <div class="foot-panel2">
+    <ul>
+      <h4>Categories</h4>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="books.html">Books</a></li>
+    </ul>
+    <ul>
+      <h4>About Us</h4>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <ul>
+      <h4>Contact Us!</h4>
+      <li><a>Call: 1234567890</a></li>
+      <li><a>Address: Manipal</a></li>
+      <li><a href="contact.html">Email us</a></li>
+    </ul>
+    <ul>
+      <h4>Social Media</h4>
+      <ul class="social-network social-circle">
+        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#" class="icoInstagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+    </ul>
+  </div>
+  <div class="foot-panel3">
+    <div class="pages">
+        <a>Conditions of Use</a>
+        <a>Privacy Notice</a>
+        <a>Your Ads & Privacy Choices</a>
+    </div>
+    <div class="copyright">
+      ©2023 - Ink and Echoes. All rights reserved
+    </div>
+  </div>
+</footer>  
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"
+  ></script>
+
+<script src="js/bootstrap.bundle.min.js"></script>
+<script>
+  const myCarousel = document.getElementById('myCarousel')
+  myCarousel.addEventListener('slid.bs.carousel', function () {
+    const activeItem = this.querySelector(".active");
+    document.querySelector(".testi-img img").src = activeItem.getAttribute("data-img");
+    document.querySelector(".testi-img .circle").style.backgroundColor = activeItem.getAttribute("data-color");
+  })
+</script>
+</body>
+</html>

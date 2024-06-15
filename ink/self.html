@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self Help</title>
+  <link rel="shortcut icon" type="image/png" href="images/logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.rtl.min.css" integrity="sha384-T5m5WERuXcjgzF8DAb7tRkByEZQGcpraRTinjpywg37AO96WoYN9+hrhDVoM6CaT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+
+  <style>
+    body{
+    font-family: "Karla", sans-serif;
+    background-color: #fff; 
+    background-repeat: no-repeat;
+}
+.main{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em 0em;
+}
+.audio{
+    width: 105px;
+    height: 375px;
+    display: flex;
+    transition: transform .2s;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1em;
+    background-color: #ac3b61;
+    color: #fff;
+    box-shadow: 1px 1px 20px 1px #87365185;
+    flex: 1 1 250px;
+    margin: 1em;
+    border-radius: 5px;
+}
+.audio:hover{
+    transform: scale(1.1);
+    background-color: #d55680;
+}
+
+.audio img{
+    width: 100%;
+    height: 250px;
+    margin: 0.5em;
+}
+.audio h2{
+    font-weight: 500;
+    font-size: medium;
+    margin: 0.5em;
+}
+.audio p{
+    font-size: small;
+    font-weight: 300;
+    text-align: center;
+    margin: 0.5em;
+}
+
+/*Navbar*/
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+    .navbar-brand img{
+        width:50px;
+        margin-top: 0;
+        border-radius:50%;
+    }
+    .collapse{
+    justify-content:flex-end;
+}
+.nav-item{
+    border:1.5px solid transparent;
+}
+.nav-item a:hover{
+    
+    border:1.5px solid white;
+}
+.navbar-toggler{
+    background-color: #fff;
+}
+
+  .navbar-text {
+    text-align: center;
+    flex: 1;
+    font-family: 'cursive', sans-serif; 
+    margin: 0 auto; 
+    display: flex;
+    align-items: center; 
+}
+
+.has-children {
+  position: relative; }
+.has-children > a span {
+  position: relative;
+  padding-right: 30px;
+  padding-left: 5px;
+  margin-bottom:0px;
+color: #fff; }
+.has-children > a span:before {
+  position: absolute;
+  content: "\2304";
+  font-size: 16px;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+ }
+.has-children .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  top: 100%;
+  position: absolute;
+  text-align: left;
+  border-top: 2px solid #007bff;
+  -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+  padding: 0px 0;
+  margin-top: 20px;
+  margin-left: 0px;
+  background: #fff;
+  -webkit-transition: 0.2s 0s;
+  -o-transition: 0.2s 0s;
+  transition: 0.2s 0s; }
+.has-children .dropdown a {
+  text-transform: none;
+  letter-spacing: normal;
+  -webkit-transition: 0s all;
+  -o-transition: 0s all;
+  transition: 0s all;
+  color: #000; }
+.has-children .dropdown .active > a {
+  color: #007bff !important; }
+.has-children .dropdown > li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-width: 200px; }
+.has-children .dropdown > li > a {
+  padding: 9px 20px;
+  display: block;
+  text-decoration:none; }
+.has-children .dropdown > li > a:hover {
+  background: #ededf5; }
+.has-children .dropdown > li.has-children > a {
+  position: relative; }
+.has-children .dropdown > li.has-children > a:after {
+  position: absolute;
+  right: 0;
+  content: "\e315";
+  right: 20px;
+  font-family: 'icomoon'; }
+.has-children .dropdown > li.has-children > .dropdown,.has-children .dropdown > li.has-children > ul {
+  left: 100%;
+  top: 0; }
+.has-children .dropdown > li.has-children:hover > a, .has-children .dropdown > li.has-children:active > a,.has-children .dropdown > li.has-children:focus > a {
+  background: #0d546a; }
+.has-children:hover > a,.has-children:focus > a,.has-children:active > a {
+  color: #007bff; }
+
+.has-children:hover, .has-children:focus, .has-children:active {
+  cursor: pointer; }
+.has-children:hover > .dropdown,.has-children:focus > .dropdown,.has-children:active > .dropdown {
+  -webkit-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  transition-delay: 0s;
+  margin-top: 0px;
+  visibility: visible;
+  opacity: 1; }
+
+
+/*Footer*/
+footer{
+    margin-top:15px;
+}
+footer a {
+    text-decoration: none;
+    color: #ffffff; 
+}
+
+
+.foot-panel2{
+    padding-top:1%;
+    background-color:#123c69;
+    color:white;
+    height:5%;
+    display:flex;
+    justify-content:space-evenly;
+    font-size:20px;
+    font-family:'Karla',sans-serif;
+    padding-bottom:1%;
+}
+ul{
+    margin-top:20px;
+    text-decoration:none;
+    list-style:none;
+}
+ul a{
+    display:block;
+    font-size:0.85rem;
+    margin-top:10px;
+    color:#dddddd;
+}
+ul a:hover{
+    color:#edc7b7;
+}
+.logo{
+    background-image:url("logo.jpeg");
+    height:100px;
+    background-size:cover;
+    width:100px;
+    border-radius:50%;
+}
+.foot-panel3{
+    background-color:#0f1111;
+    color:white;
+    height:80px;
+    font-size:0.7rem;
+    text-align:center;
+}
+.pages{
+padding-top:25px;
+}
+.copyright{
+    padding-top:5px;
+}
+
+.social-network {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.social-network i {
+    font-size: 24px; 
+    margin-right: 10px; 
+}
+/*SOCİAL İCONS*/
+
+ul.social-network {
+  list-style: none;
+  display: inline;
+  margin-left: 0 !important;
+  padding: 0;
+}
+
+ul.social-network li {
+  display: inline;
+  margin: 0 5px;
+}
+
+.social-network a.icoFacebook:hover {
+  background-color: #3B5998;
+}
+
+.social-network a.icoInstagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);   
+}
+
+.social-network a.icoTwitter:hover {
+  background-color: #00acee;
+}
+
+.social-network a.icoFacebook:hover i,
+.social-network a.icoInstagram:hover i, .social-network a.icoTwitter:hover i {
+  color: #fff;
+}
+
+.social-network a.socialIcon:hover,
+.socialHoverClass {
+  color: #44BCDD;
+}
+
+.social-circle li a {
+  display: inline-block;
+  position: relative;
+  margin: 0 auto 0 auto;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  font-size: 15px;
+}
+
+.social-circle li i {
+  margin: 0;
+  line-height: 30px;
+  text-align: center;
+}
+
+.social-circle li a:hover i,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.social-circle i {
+  color: #000;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+}
+
+.social-network a {
+  background-color: #F9F9F9;
+}
+
+
+  /*Back to top*/
+  .back-to-top {
+  position: fixed;
+  display: none;
+  right: 45px;
+  bottom: 45px;
+  z-index: 99;
+}
+
+/*** Button ***/
+.btn {
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+  padding: 13px 20px 12px;
+  background-color: #123c69;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.btn:hover{
+  background-color: #000;
+  color: #fff;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    background-color: #123c69;
+    color:#fff;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 0px;
+}
+  </style>
+
+</head>
+
+<body id="#">
+  <nav class="navbar navbar-expand-md w-100" style="background-color:#123c69">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/logo.png"></a> 
+      <p class="navbar-text" style="color:white;font-family:Karla;font-size:20px;">Ink and Echoes</p>
+      <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <li class="has-children">
+              <a class="nav-link active"><span>Category</span></a>
+              <ul class="dropdown">
+                <li><a href="music.html">Music</a></li>
+                <li><a href="books.html">Books</a></li>
+              </ul>
+            </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="testimonial.html">Testimonials</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color:white" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-md">
+    <div class="main">
+      <div class="audio audio1">
+        <a href="https://www.amazon.in/Ikigai-H%C3%A9ctor-Garc%C3%ADa/dp/178633089X"> 
+          <img src="images/ikigai.jpeg" alt="">
+        </a>
+        <h2>Ikigai</h2>
+        <p>"The feeling of being alive now and/or individual motivationfor living."</p>
+      </div>
+      <div class="audio audio1">
+        <a href="https://www.amazon.in/Atomic-Habits-James-Clear/dp/1847941834/ref=sr_1_2?crid=1B7YIMQTPS84L&keywords=atomic+habits&qid=1697899805&s=books&sprefix=atomic+habit%2Cstripbooks%2C208&sr=1-2">
+          <img src="images/atom.jpg" alt="">
+        </a>
+        <h2>Atomic Habits</h2>
+        <p>"Every action you take is a vote for the person you wish to become."</p>
+      </div>  
+      <div class="audio">
+        <a href="https://www.amazon.in/SECRET-BYRNE-RHONDA/dp/1847370292/ref=sr_1_1_sspa?crid=CNUN9U11ODFK&keywords=secret&qid=1697899771&s=books&sprefix=secre%2Cstripbooks%2C225&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+          <img src="images/secret.jpg" alt="">
+        </a>
+        <h2>The Secret</h2>
+        <p>"See the things that you want as already yours."</p>
+      </div>
+      <div class="audio audio1">
+        <a href="https://www.amazon.in/Me-Brain-Overthinkers-instant-bestseller/dp/152991678X/ref=sr_1_1?crid=3HYCSBOOKIQE0&keywords=me+vs+brain&qid=1697900110&s=books&sprefix=me+vs+brain%2Cstripbooks%2C234&sr=1-1">
+          <img src="images/me.jpg" alt="">
+        </a>
+        <h2>Me Vs. Brain</h2>
+        <p>"Don't overthink It."</p>
+      </div>
+      <div class="audio">
+        <a href="https://www.amazon.in/Why-Nobody-Told-This-Before/dp/0241529727/ref=sr_1_1?crid=1S1FKVCB989A1&keywords=why+has+nobody+told+me+this+before+dr+julie&nsdOptOutParam=true&qid=1697900363&s=books&sprefix=why+has+n%2Cstripbooks%2C222&sr=1-1">
+          <img src="images/why.jpg" alt=""></a>
+        <h2>Why Has Nobody Told Me This Before</h2>
+        <p>"You have to get to work being your own coach instead of your own worst critic."</p>
+      </div>
+      <div class="audio audio1">
+        <a href="https://www.amazon.in/TOXIC-POSITIVITY-FEELINGS-OBSESSED-POSITIVE/dp/1398704873/ref=sr_1_1?crid=M2Y7KTP40PJH&keywords=toxic+positivity&qid=1697900503&s=books&sprefix=toxic+positivit%2Cstripbooks%2C231&sr=1-1">
+          <img src="images/toxic.jpg"alt=""></a>
+        <h2>Toxic Positivity</h2>
+        <p>"Most major social justice movements in history began with a complaint."</p>
+      </div>
+      <div class="audio audio1">
+        <a href="https://www.amazon.in/AM-Club-Your-Morning-Elevate/dp/9387944891/ref=sr_1_1_sspa?crid=29LLL2XEKKITB&keywords=5am+club&qid=1697900834&s=books&sprefix=5am+clu%2Cstripbooks%2C211&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+          <img src="images/club.jpg" alt="">
+        </a>
+        <h2>The 5am Club</h2>
+        <p>"All change is hard at first, messy in the middle and gorgeous at the end."</p>
+      </div>
+      <div class="audio">
+        <a href="https://www.amazon.in/Think-Like-Monk-Jay-Shetty/dp/0008386595/ref=sr_1_1_sspa?crid=TLZC84SE36IH&keywords=think+like+a+monk&qid=1697907660&s=books&sprefix=think+like+a+monk%2Cstripbooks%2C209&sr=1-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">
+          <img src="images/think.jpg" alt="">
+        </a>
+        <h2>Think Like A Monk</h2>
+        <p>"Cancers of the Mind: Comparing, Complaining, Criticizing."</p>
+      </div>  
+    </div>
+    </div>
+    <footer>
+      <a href="#" class="btn btn-lg btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+                
+      <div class="foot-panel2">
+        <ul>
+          <h4>Categories</h4>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="books.html">Books</a></li>
+        </ul>
+        <ul>
+          <h4>About Us</h4>
+          <li><a href="about.html">About</a></li>
+        </ul>
+        <ul>
+          <h4>Contact Us!</h4>
+          <li><a>Call: 1234567890</a></li>
+          <li><a>Address: Manipal</a></li>
+          <li><a href="contact.html">Email us</a></li>
+        </ul>
+        <ul>
+          <h4>Social Media</h4>
+          <ul class="social-network social-circle">
+            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" class="icoInstagram" title="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </ul>
+      </div>
+      <div class="foot-panel3">
+        <div class="pages">
+            <a>Conditions of Use</a>
+            <a>Privacy Notice</a>
+            <a>Your Ads & Privacy Choices</a>
+        </div>
+        <div class="copyright">
+          ©2023 - Ink and Echoes. All rights reserved
+        </div>
+      </div>
+    </footer>  
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"
+      ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"> 
+    </script>
+  </body>
+</html>
